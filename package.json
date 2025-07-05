@@ -4,12 +4,18 @@
   "type": "module",
   "scripts": {
     "start": "bun server/index.ts",
-    "dev": "bun --watch server/index.ts"
+    "dev": "bun --watch server/index.ts",
+    "build": "cd frontend && npm run build",
+    "build:frontend": "cd frontend && npm run build",
+    "build:server": "bun build server/index.ts --outdir dist",
+    "deploy": "vercel --prod"
   },
   "private": true,
   "devDependencies": {
-    "@types/bun": "latest"
-  },
+    "@types/bun": "latest",
+    "@types/node": "^20.9.1",
+    "vercel": "latest"
+  }, 
   "peerDependencies": {
     "typescript": "^5"
   },
