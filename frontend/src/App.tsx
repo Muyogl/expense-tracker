@@ -19,7 +19,7 @@ function App() {
       setTotalSpent(data.total);
     }
     fetchTotalSpent();
-    fetch("api/expenses/total-spent");
+    fetch("/api/expenses/total-spent");
   }, []);
 
   return (
