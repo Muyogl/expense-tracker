@@ -1,8 +1,6 @@
 import { Hono } from "hono";
 import { z } from "zod";
-import { validator } from "hono/validator";
 import { zValidator } from "@hono/zod-validator";
-import { accepts } from "hono/accepts";
 
 const expenseSchema = z.object({
   id: z.number().int().positive().min(1),

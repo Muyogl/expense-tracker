@@ -1,4 +1,4 @@
-import app from "./app";
+import { app } from ".";
 
 const server = Bun.serve({
   port: process.env.PORT || 3000,
