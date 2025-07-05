@@ -16,6 +16,7 @@ function App() {
     async function fetchTotalSpent() {
       const res = await fetch("/api/expenses/total-spent");
       const data = await res.json();
+      console.log(data); // <-- Should log: { total: 1490 }
       setTotalSpent(data.total);
     }
     fetchTotalSpent();
