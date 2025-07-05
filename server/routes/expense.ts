@@ -38,6 +38,7 @@ export const expensesRoute = new Hono()
       (acc, expense) => acc + expense.amount,
       0
     );
+    c.header("Cache-Control", "no-store"); // 👈 force no caching
     return c.json({ total });
   })
 
