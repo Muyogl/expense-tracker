@@ -36,6 +36,7 @@ app.post("/", zValidator("json", createPostSchema), async (c) => {
 
 app.get("/total-spent", (c) => {
   const total = fakeExpenses.reduce((acc, expense) => acc + expense.amount, 0);
+  c.header("Cache-Control", "no-store"); // 👈 force no caching
   return c.json({ total });
 });
 
