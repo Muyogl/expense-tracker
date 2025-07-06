@@ -1,9 +1,9 @@
 FROM oven/bun:latest
 
-WORKDIR /app
+WORKDIR /server
 COPY . .
 
 RUN bun install
 
 EXPOSE 3000
-CMD ["bun", "app.ts"]
+CMD ["bun", "index.ts"]
