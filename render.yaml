@@ -16,4 +16,4 @@ services:
     rootDir: frontend
     envVars:
       - key: VITE_API_URL
-        value: https://expense-tracker-backend-wjpk.onrender.com
+        value: https://expense-tracker-backend-wjpk.onrender.com/api
