@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: expense-tracker-backend
+    env: docker
+    plan: free
+    dockerfilePath: ./server/Dockerfile
+    buildFilter: server/
+    envVars:
+      - key: PORT
+        value: 3000
+
+  - type: static
+    name: expense-tracker-frontend
+    env: static
+    buildCommand: bunx --bun vite build
+    staticPublishPath: dist
+    rootDir: frontend
+    buildFilter: frontend/
+    envVars:
+      - key: VITE_API_URL
+        value: https://expense-tracker-backend.onrender.com/api
