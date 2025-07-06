@@ -12,16 +12,18 @@ import {
 function App() {
   const [totalSpent, setTotalSpent] = useState(0);
 
+  // Example usage in frontend/src/App.tsx
+  const apiUrl = import.meta.env.VITE_API_URL || "/api";
+
   useEffect(() => {
     async function fetchTotalSpent() {
-      const res = await fetch("/api/expenses/total-spent");
+      const res = await fetch(`${apiUrl}/expenses/total-spent`);
       const data = await res.json();
       console.log(data); // <-- Should log: { total: 1490 }
       setTotalSpent(data.total);
     }
     fetchTotalSpent();
-    fetch("/api/expenses/total-spent");
-  }, []);
+  }, [apiUrl]);
 
   return (
     <>
