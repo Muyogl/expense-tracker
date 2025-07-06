@@ -11,7 +11,7 @@ services:
   - type: web
     name: expense-tracker-frontend
     env: static
-    buildCommand: bunx --bun vite build
+    buildCommand: npm run build
     staticPublishPath: dist
     rootDir: frontend
     envVars:
