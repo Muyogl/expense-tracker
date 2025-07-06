@@ -3,7 +3,7 @@ services:
     name: expense-tracker-backend
     env: docker
     plan: free
-    dockerfilePath: ./server/Dockerfile
+    dockerfilePath: server/Dockerfile
     envVars:
       - key: PORT
         value: 3000
