@@ -1,6 +1,6 @@
 FROM oven/bun:latest
 
-WORKDIR /server
+WORKDIR /app
 COPY . .
 
 RUN bun install
